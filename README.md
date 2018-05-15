@@ -125,39 +125,29 @@ class TodoListRepository {
   }
 
   listAllTodos() {
-    return this.todoList;
+    //实现查看所有todos的方法
   }
 
   findTodoBy(id) {
-    return this.todoList.find(function(todo) {
-      return todo.id == id;
-    });
+    //实现通过id查看具体todo的方法
   }
 
   createTodo(todoBody) {
-    const todo = new Todo(++currentId, todoBody.name, todoBody.description);
-    this.todoList.push(todo);
+    //实现创建新todo纪录的方法
   }
 
   updateTodo(id, update) {
-    const todo = this.findTodoBy(id);
-    Object.assign(todo, update);
-    return todo;
+    //实现通过id和一个更新对象来更新todo纪录的方法
   }
 
   deleteTodoBy(id) {
-    const index = this.todoList.findIndex(function(todo) {
-      return todo.id == id;
-    });
-    if(index >= 0) {
-      this.todoList.splice(index, 1);
-    }
+    //实现通过id来删除todo纪录的方法
   }
 }
 
 module.exports = new TodoListRepository();
 ```
-可以看到我们用一个全局currentId来模拟了数据id的自增，使用一个内存数组来存放所有的todo信息，通过对该数组的操作来实现对于所有todo的增删改查。如果有兴趣的话，可以用自己的方式来实现这些功能。
+可以看到我们用一个全局currentId来模拟了数据id的自增，使用一个内存数组来存放所有的todo信息，我们希望通过对该数组的操作来实现对于所有todo的增删改查。请尝试自己来实现这些功能。（所有对于todo记录的修改都是基于todoList这个内存数组来实现）
 
 ## 创建controller
 有了model和repository，我们就有了基本的业务操作能力，这时候让我们来完成controller的逻辑。controller负责完成对于不同请求的处理，返回正确的response，这里让我们利用写好的repository来完成增删改查这些基本动作。
