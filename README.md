@@ -68,7 +68,11 @@ express RESTFul api for basic introduction
 在package.json中添加关于express和nodemon的依赖，并在scripts中添加nodemon的启动命令:
 ```
   "dependencies": {
-    "express": "~4.0.0"
+    "body-parser": "~1.18.3",
+    "express": "~4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "~1.17.4"
   },
   "scripts": {
     "test": "echo \"Error, no test specified\" && exit 1",
