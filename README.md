@@ -22,7 +22,11 @@ express RESTFul api for basic introduction
   "description": "CRUD api for todo list",
   "main": "index.js",
   "dependencies": {
-    "express": "~4.0.0"
+    "body-parser": "~1.18.3",
+    "express": "~4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "~1.17.4"
   },
   "scripts": {
     "test": "echo \"Error, no test specified\" && exit 1",
